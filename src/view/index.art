@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Parrot</title>
+    <link rel="stylesheet" href="/node_modules/plume-css/lib/tables.css">
+  </head>
+  <body>
+    <div class="plume">
+      <table>
+        <thead>
+          <tr>
+            <th>Url</th>
+            <th>Method</th>
+            <th>Body</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{each $data.requests}}
+            <tr>
+              <td>{{$value.url}}</td>
+              <td>{{$value.method}}</td>
+              <td>
+                <pre><code>{{$value.body}}</code></pre>
+              </td>
+              <td>{{$value.timestamp}}</td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <script src="/node_modules/socket.io-client/dist/socket.io.js"></script>
+    <script src="/js/request_row_builder.js"></script>
+    <script>
+      const socket = io()
+      socket.on('request-received', buildRequestRow)
+    </script>
+  </body>
+</html>
