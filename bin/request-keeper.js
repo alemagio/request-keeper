@@ -3,7 +3,7 @@
 const fastify = require('fastify')({
   logger: true
 })
-const app = require('./src/app')
+const app = require('../src/app')
 
 fastify.register(app)
 
