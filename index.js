@@ -1,5 +1,10 @@
 'use strict'
 
-// const app = require('./src')
+const fastify = require('fastify')({
+  logger: true
+})
+const app = require('./src/app')
 
-module.exports = {}
+fastify.register(app)
+
+fastify.listen(3000)
