@@ -2,8 +2,13 @@
 
 const fp = require('fastify-plugin')
 
+function formatTimestamp(date) {
+  return `${date.getFullYear()}-${date.getMonth() +
+    1}-${date.getDate()} ${date.getHours()}:${date.getMinutes()}`
+}
+
 module.exports = fp(async function(fastify, opts) {
-  fastify.decorate('parseRequest', req => {
+  fastify.decorate('parseRequest', function(req) {
     const now = new Date()
     return {
       url: req.url.replace('/request', ''),
@@ -12,8 +17,7 @@ module.exports = fp(async function(fastify, opts) {
       method: req.method,
       params: req.params,
       query: req.query,
-      timestamp: `${now.getFullYear()}-${now.getMonth() +
-        1}-${now.getDate()} ${now.getHours()}:${now.getMinutes()}`
+      timestamp: formatTimestamp(now)
     }
   })
 })

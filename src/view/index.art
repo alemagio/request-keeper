@@ -31,7 +31,7 @@
     </div>
 
     <script src="/node_modules/socket.io-client/dist/socket.io.js"></script>
-    <script src="/js/request_row_builder.js"></script>
+    <script src="/js/requestRowBuilder.js"></script>
     <script>
       const socket = io()
       socket.on('request-received', buildRequestRow)
