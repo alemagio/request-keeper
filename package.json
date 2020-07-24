@@ -27,13 +27,13 @@
   "keywords": [
     ""
   ],
-  "homepage": "https://github.com/alemagio/cane",
+  "homepage": "https://github.com/alemagio/request-keeper",
   "bugs": {
-    "url": "https://github.com/alemagio/cane/issues"
+    "url": "https://github.com/alemagio/request-keeper/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/alemagio/cane.git"
+    "url": "https://github.com/alemagio/request-keeper"
   },
   "dependencies": {
     "art-template": "^4.13.2",

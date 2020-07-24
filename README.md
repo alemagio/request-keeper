@@ -4,7 +4,7 @@
 </h1>
 
 <p align="center">
-  
+
 </p>
 
 <p align="center">
@@ -19,26 +19,41 @@
 
 # About
 
-request-keeper
-
+The idea of this project is to provide an easy way of visualizing requests coming from your WIP client while there is still no server ready.
 
 
 # Install
 
+You can install it as a dev dependency for your project
+
 ```bash
-npm add request-keeper
+npm install --save-dev request-keeper
+```
+```bash
+yard add -D request-keeper
+```
+
+or globally on your system
+
+```bash
+npm install -g request-keeper
 ```
 
 # Usage
 
-```js
-// @TODO
-const {} = require('request-keeper')
+Simply create a script on your package.json
+
+```json
+"scripts": {
+  "server": "node node_modules/request-keeper/index.js"
+}
 ```
 
-# Example
+or if you installed it globally you can simply run
 
-<!-- TODO -->
+```bash
+npx request-keeper
+```
 
 # Contributing
 
