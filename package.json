@@ -154,7 +154,10 @@
     }
   },
   "release": {
-    "branch": "master",
+    "branch": [
+      "master",
+      { "name": "0.x", "prerelease": "dev" }
+    ],
     "analyzeCommits": {
       "preset": "angular",
       "releaseRules": [
