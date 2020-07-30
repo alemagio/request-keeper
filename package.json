@@ -106,7 +106,8 @@
   },
   "eslintIgnore": [
     "coverage/**",
-    "src/view/**"
+    "src/view/**",
+    "bin/**"
   ],
   "eslintConfig": {
     "env": {
