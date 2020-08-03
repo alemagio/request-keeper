@@ -6,12 +6,15 @@
   "engines": {
     "node": ">=10.0.0"
   },
+  "bin": {
+    "request-keeper": "./bin/start.js"
+  },
   "scripts": {
     "lint": "eslint . && npm run lint:lockfile",
     "lint:fix": "eslint . --fix",
     "format": "prettier --config .prettierrc.js --write '**/*.js'",
     "test": "tap __tests__/**/*.test.js",
-    "start": "node index.js",
+    "start": "./bin/start.js",
     "dev": "fastify start -w -l info -P src/app.js",
     "test:watch": "tap __tests__/**/*.test.js --watch",
     "semantic-release": "semantic-release",
