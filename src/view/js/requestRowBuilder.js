@@ -1,3 +1,4 @@
+// TODO: move this to a module using a bundler
 function buildRequestRow(req) {
   const tr = document.createElement('tr')
   const tdUrl = document.createElement('td')

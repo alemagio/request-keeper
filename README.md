@@ -39,13 +39,17 @@ or globally on your system
 npm install -g request-keeper
 ```
 
+```bash
+yarn add --global request-keeper
+```
+
 # Usage
 
 Simply create a script on your package.json
 
 ```json
 "scripts": {
-  "server": "node node_modules/request-keeper/index.js"
+  "server": "node_modules/request-keeper/bin/start.js"
 }
 ```
 
@@ -54,6 +58,14 @@ or if you installed it globally you can simply run
 ```bash
 npx request-keeper
 ```
+
+or simply
+
+```bash
+request-keeper
+```
+
+
 
 # Contributing
 
