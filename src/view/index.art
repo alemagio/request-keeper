@@ -2,7 +2,25 @@
 <html>
   <head>
     <title>Request Keeper</title>
-    <link rel="stylesheet" href="/node_modules/plume-css/lib/tables.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+    <link rel="stylesheet" href="/node_modules/plume-css/lib/plume-all.css">
+    <style>
+      .expandable {
+        white-space: nowrap;
+        overflow: hidden;
+      }
+      .td-expandable {
+        max-width: 10px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .request-row {
+        cursor: pointer;
+      }
+      .request-row:hover {
+        background-color: #cccccc;
+      }
+    </style>
   </head>
   <body>
     <div class="plume">
@@ -17,11 +35,14 @@
         </thead>
         <tbody>
           {{each $data.requests}}
-            <tr>
+            <tr class="request-row" data-request-row="true">
               <td>{{$value.url}}</td>
               <td>{{$value.method}}</td>
-              <td>
-                <pre><code>{{$value.body}}</code></pre>
+              <td class="td-expandable" data-expandable-container="true">
+                <span class="expandable" data-expandable="true">
+                  {{$value.body}}
+                </span>
+                <pre class="pm-is-hidden" data-expanded="true"><code>{{$value.body}}</code></pre>
               </td>
               <td>{{$value.timestamp}}</td>
             </tr>
@@ -32,6 +53,7 @@
 
     <script src="/node_modules/socket.io-client/dist/socket.io.js"></script>
     <script src="/js/requestRowBuilder.js"></script>
+    <script src="/js/rowManager.js"></script>
     <script>
       const socket = io()
       socket.on('request-received', buildRequestRow)

@@ -18,7 +18,3 @@ test('request route', async t => {
     method: 'POST'
   })
 })
-
-test('list route', async t => {
-  // TODO
-})
