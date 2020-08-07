@@ -20,7 +20,7 @@
     "semantic-release": "semantic-release",
     "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn",
     "coverage": "tap --cov --coverage-report=html __tests__",
-    "posttest": "tap --coverage-report=text-lcov | codecov"
+    "coverage:upload": "tap --coverage-report=html __tests__ | codecov"
   },
   "author": {
     "name": "alemagio",
