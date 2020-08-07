@@ -13,13 +13,14 @@
     "lint": "eslint . && npm run lint:lockfile",
     "lint:fix": "eslint . --fix",
     "format": "prettier --config .prettierrc.js --write '**/*.js'",
-    "test": "tap __tests__/**/*.test.js",
+    "test": "tap --100 __tests__/**/*.test.js",
     "start": "./bin/start.js",
     "dev": "fastify start -w -l info -P src/app.js",
     "test:watch": "tap __tests__/**/*.test.js --watch",
     "semantic-release": "semantic-release",
     "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn",
-    "coverage": "tap --cov --coverage-report=html __tests__"
+    "coverage": "tap --cov --coverage-report=html __tests__",
+    "posttest": "tap --coverage-report=text-lcov | codecov"
   },
   "author": {
     "name": "alemagio",
@@ -61,6 +62,7 @@
     "babel-plugin-syntax-async-functions": "^6.13.0",
     "babel-plugin-transform-regenerator": "^6.26.0",
     "babel-preset-env": "^1.6.1",
+    "codecov": "^3.7.2",
     "cz-conventional-changelog": "^1.2.0",
     "eslint": "^6.0.1",
     "eslint-config-standard": "^13.0.1",
