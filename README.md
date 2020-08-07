@@ -65,9 +65,12 @@ or simply
 request-keeper
 ```
 
-
+Now you can navigate to `http://localhost:3000/list` and see an empty list of requests.
+To see in real time your requests what you have to do is send a request to `http://localhost:3000/request/` and you can add any url after the `/`.
 
 # Contributing
+
+This is a work in progress project, so feel free to share your opinion and make proposals in the issue section.
 
 Please consult [CONTRIBUTING](./CONTRIBUTING.md) for guidelines on contributing to this project.
 
