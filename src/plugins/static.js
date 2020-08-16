@@ -11,7 +11,7 @@ module.exports = fp(async function(fastify, opts) {
   })
 
   fastify.register(fastifyStatic, {
-    root: path.join(__dirname, '..', 'view', 'js'),
+    root: path.join(__dirname, '..', '..', 'dist'),
     prefix: '/js/',
     decorateReply: false // the reply decorator has been added by the first plugin registration
   })

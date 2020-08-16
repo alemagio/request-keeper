@@ -1,0 +1,13 @@
+{
+  "env": {
+    "es6": true
+  },
+  "ecmaFeatures": {},
+  "parserOptions": {
+      "ecmaVersion": 8,
+      "sourceType": "module"
+  },
+  "rules": {
+      "node/no-unsupported-features/es-syntax": "off"
+  }
+}

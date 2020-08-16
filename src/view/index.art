@@ -51,12 +51,6 @@
       </table>
     </div>
 
-    <script src="/node_modules/socket.io-client/dist/socket.io.js"></script>
-    <script src="/js/requestRowBuilder.js"></script>
-    <script src="/js/rowManager.js"></script>
-    <script>
-      const socket = io()
-      socket.on('request-received', buildRequestRow)
-    </script>
+    <script type="module" src="/js/bundle.esm.js"></script>
   </body>
 </html>

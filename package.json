@@ -12,15 +12,16 @@
   "scripts": {
     "lint": "eslint . && npm run lint:lockfile",
     "lint:fix": "eslint . --fix",
+    "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn",
     "format": "prettier --config .prettierrc.js --write '**/*.js'",
-    "test": "tap --100 __tests__/**/*.test.js",
     "start": "./bin/start.js",
     "dev": "fastify start -w -l info -P src/app.js",
+    "test": "tap --100 __tests__/**/*.test.js",
     "test:watch": "tap __tests__/**/*.test.js --watch",
-    "semantic-release": "semantic-release",
-    "lint:lockfile": "lockfile-lint --path package-lock.json --validate-https --allowed-hosts npm yarn",
     "coverage": "tap --cov --coverage-report=html __tests__",
-    "coverage:upload": "tap --coverage-report=text-lcov | codecov"
+    "coverage:upload": "tap --coverage-report=text-lcov | codecov",
+    "semantic-release": "semantic-release",
+    "build:js": "rollup -c"
   },
   "author": {
     "name": "alemagio",
@@ -52,6 +53,8 @@
   "devDependencies": {
     "@commitlint/cli": "^7.2.1",
     "@commitlint/config-conventional": "^7.1.2",
+    "@rollup/plugin-commonjs": "^14.0.0",
+    "@rollup/plugin-node-resolve": "^8.4.0",
     "@semantic-release/changelog": "^3.0.4",
     "@semantic-release/commit-analyzer": "^6.2.0",
     "@semantic-release/git": "^7.0.16",
@@ -78,6 +81,7 @@
     "lockfile-lint": "^2.0.1",
     "open-cli": "^5.0.0",
     "prettier": "^1.18.2",
+    "rollup": "^2.23.1",
     "semantic-release": "^15.13.19",
     "tap": "^14.10.8"
   },
@@ -106,13 +110,15 @@
     ],
     "parser": "babel-eslint",
     "ignore": [
-      "**/out/"
+      "**/out/",
+      "dist/*"
     ]
   },
   "eslintIgnore": [
     "coverage/**",
     "src/view/**",
-    "bin/**"
+    "bin/**",
+    "rollup.config.js"
   ],
   "eslintConfig": {
     "env": {
@@ -205,6 +211,7 @@
   ],
   "files": [
     "src",
+    "dist",
     "bin"
   ]
 }

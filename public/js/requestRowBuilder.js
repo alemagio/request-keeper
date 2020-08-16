@@ -1,5 +1,6 @@
-// TODO: move this to a module using a bundler
-function buildRequestRow(req) {
+import { expand } from './rowManager'
+
+export const buildRequestRow = function(req) {
   const tr = document.createElement('tr')
   tr.classList.add('request-row')
   tr.setAttribute('data-request-row', true)
