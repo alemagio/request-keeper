@@ -7,4 +7,4 @@ document.querySelectorAll('[data-request-row]').forEach(function(el) {
 })
 
 const socket = io()
-socket.on('request-received', buildRequestRow)
+socket.on('request-received', buildRequestRow(document))

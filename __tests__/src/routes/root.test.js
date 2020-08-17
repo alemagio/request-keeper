@@ -1,7 +1,7 @@
 'use strict'
 
 const { test } = require('tap')
-const { build } = require('../helper')
+const { build } = require('../../helper')
 const art = require('art-template')
 const path = require('path')
 
@@ -14,7 +14,7 @@ test('list route', async t => {
   })
 
   const data = { requests: [] }
-  const templatePath = path.join(__dirname, '..', '..', 'src', 'view', 'index.art')
+  const templatePath = path.join(__dirname, '..', '..', '..', 'src', 'view', 'index.art')
 
   t.strictEqual(res.statusCode, 200)
   t.strictEqual(res.headers['content-length'], '' + res.body.length)

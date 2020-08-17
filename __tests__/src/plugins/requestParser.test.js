@@ -2,7 +2,7 @@
 
 const { test } = require('tap')
 const Fastify = require('fastify')
-const parser = require('../../src/plugins/requestParser')
+const parser = require('../../../src/plugins/requestParser')
 
 test('request parser should work standalone', async t => {
   t.plan(1)
