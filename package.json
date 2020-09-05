@@ -30,7 +30,11 @@
   },
   "license": "Apache-2.0",
   "keywords": [
-    ""
+    "socket.io",
+    "productivity",
+    "request",
+    "request-keeper",
+    "fastify"
   ],
   "homepage": "https://github.com/alemagio/request-keeper",
   "bugs": {
