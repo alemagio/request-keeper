@@ -40,7 +40,7 @@ npm install -g request-keeper
 ```
 
 ```bash
-yarn add --global request-keeper
+yarn global add request-keeper
 ```
 
 # Usage
